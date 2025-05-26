@@ -1,10 +1,15 @@
 #include <stdio.h>
 
 int main() {
-    int populacao1, ptos_turisticos1, populacao2, ptos_turisticos2;
-    char estado1, estado2, cod_carta1[4], cod_carta2[4];
-    char nome_cidade1[50], nome_cidade2[50];
-    float area1, PIB1, area2, PIB2;
+    // Variáveis para Carta 1
+    char estado1, cod_carta1[4], nome_cidade1[50];
+    int populacao1, ptos_turisticos1;
+    float area1, PIB1, densidade1, pib_per_capita1;
+
+    // Variáveis para Carta 2
+    char estado2, cod_carta2[4], nome_cidade2[50];
+    int populacao2, ptos_turisticos2;
+    float area2, PIB2, densidade2, pib_per_capita2;
 
     printf("Insira os dados de suas cartas!\n");
 
@@ -33,6 +38,10 @@ int main() {
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &ptos_turisticos1);
 
+     // Cálculos da Carta 1
+    densidade1 = populacao1 / area1;
+    pib_per_capita1 = (PIB1 * 1e9) / populacao1; // PIB em reais
+
     // Carta 02
     printf("\nCarta 02:\n");
     printf("Estado (insira apenas a primeira letra do estado, de A a H): ");
@@ -57,6 +66,10 @@ int main() {
 
     printf("Número de Pontos Turísticos: ");
     scanf("%d", &ptos_turisticos2);
+
+    // Cálculos da Carta 2
+    densidade2 = populacao2 / area2;
+    pib_per_capita2 = (PIB2 * 1e9) / populacao2;
 
     // Exibição dos dados
     printf("\n\n=== CARTA 01 ===\n");
